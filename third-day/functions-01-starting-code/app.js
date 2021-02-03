@@ -9,7 +9,7 @@ const PLAYER = "PLAYER WINS";
 const COMPUTER = "COMPUTER WINS";
 
 let gameISRunning = false;
-const getPlayerAction = function () {
+const getPlayerAction =  () => {
   const selection = prompt(
     `${ROCK}, ${PAPER} or ${SCISSORS}?`,
     ""
@@ -25,7 +25,7 @@ const getPlayerAction = function () {
   return selection;
 };
 
-const getComputerChoice = function () {
+const getComputerChoice =  () => {
   const randomValue = Math.random();
   if (randomValue < 0.34) {
     return ROCK;
@@ -36,7 +36,7 @@ const getComputerChoice = function () {
   }
 };
 
- function getWinner (computer, player) {
+ const  getWinner = (computer, player) => {
   if (computer === player) {
     winner =  DRAW;
   } else if (
