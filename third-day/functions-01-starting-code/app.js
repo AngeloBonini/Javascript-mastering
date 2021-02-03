@@ -4,6 +4,9 @@ const ROCK = "ROCK";
 const PAPER = "PAPER";
 const SCISSORS = "SCISSORS";
 const DEFAULT_USER_CHOICE = PAPER;
+const DRAW = "DRAW";
+const PLAYER = "PLAYER WINS";
+const COMPUTER = "COMPUTER WINS";
 
 let gameISRunning = false;
 const getPlayerAction = function () {
@@ -22,22 +25,45 @@ const getPlayerAction = function () {
   return selection;
 };
 
-const strat = function gameStart() {};
-
-const person = {
-  greet: function ola() {
-    console.log("Olá Amigo");
-  },
+const getComputerChoice = function () {
+  const randomValue = Math.random();
+  if (randomValue < 0.34) {
+    return ROCK;
+  } else if (randomValue < 0.67) {
+    return PAPER;
+  } else {
+    return SCISSORS;
+  }
 };
-console.log(person.name);
 
+ function getWinner (computer, player) {
+  if (computer === player) {
+    winner =  DRAW;
+  } else if (
+    (computer == ROCK && player == SCISSORS) ||
+    (computer == SCISSORS && player == PAPER) ||
+    (computer == PAPER && player == ROCK)
+  ) {
+    winner =  COMPUTER;
+  } else if (
+    (player == ROCK && computer == SCISSORS) ||
+    (player == SCISSORS && computer == PAPER) ||
+    (palyer == PAPER && computer == ROCK)
+  ) {
+    winner = PLAYER;
+  }
+  return winner
+};
 console.log(typeof gameStart);
 startGameBtn.addEventListener("click", function () {
-    if(gameISRunning){
-        return;
-    }
-    gameISRunning = true;
+  if (gameISRunning) {
+    return;
+  }
+  gameISRunning = true;
   console.log("game is starting...");
   const player = getPlayerAction();
+  const computer = getComputerChoice();
+  const winner= getWinner(computer, player);
+  console.log(winner);
   console.log(player);
 });
