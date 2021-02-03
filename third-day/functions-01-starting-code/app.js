@@ -1,5 +1,8 @@
 const startGameBtn = document.getElementById('start-game-btn');
 
+
+
+
 const strat = function gameStart(){
     console.log("game is starting...")
 };
