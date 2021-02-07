@@ -72,3 +72,15 @@ startGameBtn.addEventListener("click", function () {
   console.log(winner);
   console.log(player);
 });
+
+// res parameter
+
+const sumUp=  (...numbers )=>{
+ let sum=0;
+ for (const num of numbers){
+   sum +=num;
+ }
+ return sum;
+};
+
+console.log(sumUp(1,3,5,-9,10));
