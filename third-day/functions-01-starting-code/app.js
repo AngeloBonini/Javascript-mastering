@@ -75,12 +75,23 @@ startGameBtn.addEventListener("click", function () {
 
 // res parameter
 
-const sumUp=  (...numbers )=>{
- let sum=0;
- for (const num of numbers){
-   sum +=num;
- }
- return sum;
+const combine = ( takeResult,operation, ...numbers) => {
+  const validateNumber = (number) => {
+    return isNan(number) ? 0 : number;
+  };
+  let sum = 0;
+  for (const num of numbers) {
+    if(operation ==='ADD'){
+      sum += validateNumber(num);
+    }else{
+      sum -= validateNumber(num);
+    }
+  }
+  return sum;
+  takeResult(sum);
 };
 
-console.log(sumUp(1,3,5,-9,10));
+const showResult = (messageText, result) => {
+  alert(messageText + '' + result);
+}
+combine(showResult.bind(this, 'the result of adding all numbers is:'),'ADD', 1, 3, 5, -9, 10);
