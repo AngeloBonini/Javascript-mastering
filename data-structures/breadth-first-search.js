@@ -89,3 +89,5 @@ let tree = {
 		right: null,
 	},
 };
+
+BreadthFirstSearch(tree, tree[10], "18");
