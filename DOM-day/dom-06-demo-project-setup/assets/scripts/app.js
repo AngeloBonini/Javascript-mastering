@@ -6,3 +6,9 @@ console.log(addMovieModal);
 
 const startAddMovieButton = document.querySelector('header').lastElementChild;
 console.log(startAddMovieButton);
+
+const toggleMovieModal = ()=>{
+    addMovieModal.classList.toggle('visible')
+};
+
+startAddMovieButton.addEventListener('click', toggleMovieModal);
