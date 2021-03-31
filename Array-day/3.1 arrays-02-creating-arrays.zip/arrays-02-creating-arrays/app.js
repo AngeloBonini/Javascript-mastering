@@ -36,9 +36,9 @@ const otherHobbies =  ["cooking", "beatbox", "sports"];
 otherHobbies.unshift("coding");
 const popedItem = otherHobbies.pop();
 const shifted = otherHobbies.shift();
-console.log(otherHobbies);
-console.log(popedItem);
-console.log(shifted);
+// console.log(otherHobbies);
+// console.log(popedItem);
+// console.log(shifted);
 
 otherHobbies[1]="BEATBOX";
 otherHobbies[5]="Reading";
@@ -57,7 +57,7 @@ const testsResults = [1, 7, 3, 7, 5.9, -10,8.5, 7 ];
 const storedResults = testsResults.concat([2.99, 4])
 testsResults.push(6.53); 
 
-console.log(testsResults.includes(8.5));
+// console.log(testsResults.includes(8.5));
 // console.log(testsResults, storedResults)
 //  console.log(testsResults.indexOf(7));
 //  console.log(testsResults.lastIndexOf(7));
@@ -67,15 +67,28 @@ const personData = [{ name: "Gelo"}, {name: "Max"}];
  * this method creates a new array and cause of that, the reference is lost
  * @author: Angelo.
  */ 
-console.log(personData.indexOf({name: "Max"}));
+// console.log(personData.indexOf({name: "Max"}));
 
 const Max = personData.find((person, index, persons) => {
   return person.name === "Max";
 })
 Max.name ="Anna";
-console.log(Max, personData);
+// console.log(Max, personData);
 
 const maxIndex = personData.findIndex((person, index, persons) =>{
   return person.name === "Gelo";
 });
-console.log(maxIndex);
+// console.log(maxIndex);
+
+/**
+ * ForEach alternative
+ */
+const prices = [9.99, 3.26, 2.1, 7.56, 4.86];
+const tax = 0.23;
+const taxAdjustedPrices = [];
+
+prices.forEach((price, idx, prices) =>{
+  const priceObj = { index: idx, taxAdjPrice:price * (1+tax) }
+  taxAdjustedPrices.push(priceObj);
+})
+console.log(taxAdjustedPrices);
