@@ -53,6 +53,7 @@ otherHobbies.splice(1, 0, "Good" );
 
 
 const testsResults = [1, 2, 3, 7, 5.9, -10,8.5 ];
-const storedResults = testsResults.slice(-6, -1);
+// const storedResults = testsResults.slice(-6, -1);
+const storedResults = testsResults.concat([2.99, 4])
 testsResults.push(6.53); 
 console.log(testsResults, storedResults)
