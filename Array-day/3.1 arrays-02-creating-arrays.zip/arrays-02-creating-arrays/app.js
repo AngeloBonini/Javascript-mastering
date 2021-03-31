@@ -52,8 +52,17 @@ otherHobbies.splice(1, 0, "Good" );
 // console.log(otherHobbies);
 
 
-const testsResults = [1, 2, 3, 7, 5.9, -10,8.5 ];
+const testsResults = [1, 7, 3, 7, 5.9, -10,8.5, 7 ];
 // const storedResults = testsResults.slice(-6, -1);
 const storedResults = testsResults.concat([2.99, 4])
 testsResults.push(6.53); 
-console.log(testsResults, storedResults)
+// console.log(testsResults, storedResults)
+//  console.log(testsResults.indexOf(7));
+//  console.log(testsResults.lastIndexOf(7));
+const personData = [{ name: "Gelo"}, {name: "Max"}];
+/**
+ * indexOf doesnot work for obejcts as they are references to values.
+ * this method creates a new array and cause of that, the reference is lost
+ * @author: Angelo.
+ *  */ 
+
