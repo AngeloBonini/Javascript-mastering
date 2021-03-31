@@ -43,3 +43,10 @@ console.log(shifted);
 otherHobbies[1]="BEATBOX";
 otherHobbies[5]="Reading";
 console.log(otherHobbies, otherHobbies[3]);
+
+otherHobbies[1] = "coding";
+console.log(otherHobbies, otherHobbies[4]);
+
+otherHobbies.splice(1, 0, "Good" );
+
+console.log(otherHobbies);
