@@ -42,11 +42,17 @@ console.log(shifted);
 
 otherHobbies[1]="BEATBOX";
 otherHobbies[5]="Reading";
-console.log(otherHobbies, otherHobbies[3]);
+// console.log(otherHobbies, otherHobbies[3]);
 
 otherHobbies[1] = "coding";
-console.log(otherHobbies, otherHobbies[4]);
+// console.log(otherHobbies, otherHobbies[4]);
 
 otherHobbies.splice(1, 0, "Good" );
 
-console.log(otherHobbies);
+// console.log(otherHobbies);
+
+
+const testsResults = [1, 2, 3, 7, 5.9, -10,8.5 ];
+const storedResults = testsResults.slice(-6, -1);
+testsResults.push(6.53); 
+console.log(testsResults, storedResults)
