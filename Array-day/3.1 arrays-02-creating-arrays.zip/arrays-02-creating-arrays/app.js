@@ -99,3 +99,21 @@ console.log(prices);
 })
 
 console.log(taxAdjustedPricesMap);
+/**
+ * reverse() and sort() methods
+ * using functions inside sort to avoid string default sorting. 
+ */
+const sortedPrices = prices.sort((a,b)=>{
+  if(a > b){
+    return 1;
+  }
+  else if (a === b){
+    return 0;
+  }
+  else{
+    return -1;
+  }
+});
+
+console.log(sortedPrices);
+console.log(sortedPrices.reverse());
