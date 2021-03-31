@@ -64,5 +64,16 @@ const personData = [{ name: "Gelo"}, {name: "Max"}];
  * indexOf doesnot work for obejcts as they are references to values.
  * this method creates a new array and cause of that, the reference is lost
  * @author: Angelo.
- *  */ 
+ */ 
+console.log(personData.indexOf({name: "Max"}));
 
+const Max = personData.find((person, index, persons) => {
+  return person.name === "Max";
+})
+Max.name ="Anna";
+console.log(Max, personData);
+
+const maxIndex = personData.findIndex((person, index, persons) =>{
+  return person.name === "Gelo";
+});
+console.log(maxIndex);
