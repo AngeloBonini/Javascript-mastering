@@ -56,6 +56,8 @@ const testsResults = [1, 7, 3, 7, 5.9, -10,8.5, 7 ];
 // const storedResults = testsResults.slice(-6, -1);
 const storedResults = testsResults.concat([2.99, 4])
 testsResults.push(6.53); 
+
+console.log(testsResults.includes(8.5));
 // console.log(testsResults, storedResults)
 //  console.log(testsResults.indexOf(7));
 //  console.log(testsResults.lastIndexOf(7));
