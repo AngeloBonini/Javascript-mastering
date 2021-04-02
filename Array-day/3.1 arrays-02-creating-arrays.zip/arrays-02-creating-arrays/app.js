@@ -118,9 +118,16 @@ const sortedPrices = prices.sort((a,b)=>{
 console.log(sortedPrices);
 console.log(sortedPrices.reverse());
 
-
+/**
+ * Original way with arrow functions.
+ */
 const filteredArr = prices.filter((price, index, prices)=>{
   return price > 6;
 })
+/**
+ * Only arrow functions way.
+ */
+const filteredArr2 = prices.filter(price => price > 6);
 
-console.log(filteredArr);
+
+console.log(filteredArr2);
