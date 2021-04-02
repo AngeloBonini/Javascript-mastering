@@ -36,3 +36,10 @@ const persons = new WeakSet();
 persons.add(person9);
 
 console.log(persons);
+
+const personDat = new WeakMap();
+personDat.set(person, 'extra info!');
+
+person9 = null;
+
+console.log(personDat);
