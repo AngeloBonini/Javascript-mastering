@@ -160,3 +160,10 @@ persons2.push({name:'Ann', age:23});
 console.log(copiedPersons);
 persons2[0].age = 31;
 console.log(persons2);
+
+
+const nameData = ["Gelo", "Bonini", "Benags", "Barn", "Umdois"];
+
+const [firstName, LastName, ...otherStuff] = nameData;
+
+console.log(firstName, LastName, otherStuff);
