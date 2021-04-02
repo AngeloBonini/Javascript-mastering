@@ -133,3 +133,13 @@ console.log(filteredArr2);
 const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
 
 console.log(sum);
+
+
+const data = "bauru:10:45235235235.5";
+
+const transformedData = data.split(':');
+console.log(transformedData);
+
+const nameFragments = ['Angelo', 'Bonini'];
+const names = nameFragments.join(' ');
+console.log(names);
