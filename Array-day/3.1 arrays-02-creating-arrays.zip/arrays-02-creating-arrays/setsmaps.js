@@ -19,3 +19,13 @@ console.log(personData.get(person1));
 for(const [key, value] of personData.entries()){
 console.log(key, value);
 }
+
+for(const key of personData.keys()){
+    console.log(key);
+}
+
+for(const value of personData.values()){
+    console.log(value);
+}
+
+console.log(personData.size);
