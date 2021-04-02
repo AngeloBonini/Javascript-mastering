@@ -130,4 +130,4 @@ const filteredArr = prices.filter((price, index, prices)=>{
 const filteredArr2 = prices.filter(price => price > 6);
 
 
-console.log(filteredArr2);
+console.log(filteredArr2 );
