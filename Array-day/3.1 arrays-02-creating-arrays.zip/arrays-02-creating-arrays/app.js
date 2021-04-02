@@ -134,12 +134,29 @@ const sum = prices.reduce((prevValue, curValue) => prevValue + curValue, 0);
 
 console.log(sum);
 
-
 const data = "bauru:10:45235235235.5";
 
-const transformedData = data.split(':');
+const transformedData = data.split(":");
 console.log(transformedData);
 
-const nameFragments = ['Angelo', 'Bonini'];
-const names = nameFragments.join(' ');
+const nameFragments = ["Angelo", "Bonini"];
+const names = nameFragments.join(" ");
 console.log(names);
+
+const copyArr = [...nameFragments];
+nameFragments.push("Mr");
+console.log(nameFragments, copyArr);
+
+console.log(Math.min(...prices));
+
+const persons2 = [
+  { name: "Gelo", age: 20 },
+  { name: "Lcuia", age: 27 },
+];
+
+const copiedPersons = [...persons2.map(person =>({name: person.name, age: person.age}))];
+
+persons2.push({name:'Ann', age:23});
+console.log(copiedPersons);
+persons2[0].age = 31;
+console.log(persons2);
