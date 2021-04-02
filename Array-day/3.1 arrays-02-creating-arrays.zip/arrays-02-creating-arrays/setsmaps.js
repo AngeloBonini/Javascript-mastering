@@ -29,3 +29,10 @@ for(const value of personData.values()){
 }
 
 console.log(personData.size);
+
+
+let person9 = {name:'Max'};
+const persons = new WeakSet();
+persons.add(person9);
+
+console.log(persons);
