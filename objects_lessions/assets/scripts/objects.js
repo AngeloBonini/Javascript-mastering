@@ -10,5 +10,6 @@ const person = {
 
 person.isAdmin = true;
 delete person.age;
+person.isAdmin = null;
 console.log(person);
 person.greet();
