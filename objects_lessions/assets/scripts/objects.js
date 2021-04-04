@@ -19,13 +19,16 @@ const rendermovies = (filter = '') => {
 
   fileteredMovies.forEach((movie) => {
     const movieEl = document.createElement('li')
-    text = movie.info.title + ' - '
-    for (key in movie.info) {
+    const { info, ...otherProps } = movie;
+    console.log(otherProps);
+    const {title: movieTitle} = info;
+    text = movieTitle + ' - '
+    for (key in info) {
       if (key !== 'title') {
-        text = text + `${key}: ${movie.info[key]}`
+        text = text + `${key}: ${info[key]}`
       }
     }
-    movieEl.textContent = text
+    movieEl.textContent = text;
     movieList.append(movieEl)
   })
 }
