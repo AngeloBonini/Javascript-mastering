@@ -8,11 +8,13 @@ const person = {
     greet:
     function(){
         alert("Hello There!!");
-    }
+    },
+    2.4: "hi"
 };
 
 person.isAdmin = true;
 delete person.age;
 person.isAdmin = null;
 console.log(person['first-name']);
-person.greet();
+// person.greet();
+console.log(person)
