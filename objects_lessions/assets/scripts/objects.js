@@ -56,7 +56,8 @@ const addMovieHandler = () => {
   }
   movies.push(newMovie)
   rendermovies()
+  const newMovie2 = Object.assign({}, newMovie);
+  console.log(newMovie2);
 }
-
 addMovieBtn.addEventListener('click', addMovieHandler)
 searchBtn.addEventListener('click', searchMoviesHandler)
