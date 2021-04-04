@@ -23,4 +23,5 @@ person.isAdmin = null;
 const keyName = 'first-name';
 console.log(person[keyName]);
 // person.greet();
-console.log(person)
+console.log(person);
+console.log("Hi");
