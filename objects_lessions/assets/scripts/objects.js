@@ -17,7 +17,13 @@ movieList.innerHTML = '';
 movies.forEach((movie)=>{
 
     const movieEl = document.createElement('li');
-    movieEl.textContent = movie.info.title;
+    text = movie.info.title + ' - ';
+    for ( key in movie.info){
+        if(key !== 'title'){
+            text = text + `${key}: ${movie.info[key]}`;
+        }
+    }
+    movieEl.textContent = text;
     movieList.append(movieEl);
 });
 
