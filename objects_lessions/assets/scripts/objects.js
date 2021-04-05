@@ -19,7 +19,13 @@ const rendermovies = (filter = '') => {
 
   fileteredMovies.forEach((movie) => {
     const movieEl = document.createElement('li')
+    if(!('info' in movie)){
+      alert("the porperty is there!!!");
+    }
     const { info, ...otherProps } = movie;
+    if(info){
+
+    }
     console.log(otherProps);
     const {title: movieTitle} = info;
     text = movieTitle + ' - '
