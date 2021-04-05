@@ -25,3 +25,6 @@ console.log(person[keyName]);
 // person.greet();
 console.log(person);
 console.log("Hi");
+if(property in func){
+  console.log("Say Hello!!");
+}
