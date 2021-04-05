@@ -1,30 +1,66 @@
-const movieList = document.getElementById('movie-list');
-movieList.style.backgroundColor = 'red';
-movieList.style.display= 'block';
+const addMovieBtn = document.getElementById('add-movie-btn')
+const searchBtn = document.getElementById('search-btn')
 
-userChosenKeyName = 'level';
+const movies = []
 
-const person = {
-    'first-name': 'Gelo',
-    age: 20,
-    hobbies: ['batbox', 'cooking', 'reading'],
-    [userChosenKeyName]: '...',
-    greet:
-    function(){
-        alert("Hello There!!");
-    },
-    2.4: "hi"
-};
+const rendermovies = (filter = '') => {
+  const movieList = document.getElementById('movie-list')
 
-person.isAdmin = true;
-delete person.age;
-person.isAdmin = null;
+  if (movies.length === 0) {
+    movieList.classList.remove('visible')
+  } else {
+    movieList.classList.add('visible')
+  }
+  movieList.innerHTML = ''
 
-const keyName = 'first-name';
-console.log(person[keyName]);
-// person.greet();
-console.log(person);
-console.log("Hi");
-if(property in func){
-  console.log("Say Hello!!");
+  const fileteredMovies = !filter
+    ? movies
+    : movies.filter((movie) => movie.info.title.includes(filter));
+
+  fileteredMovies.forEach((movie) => {
+    const movieEl = document.createElement('li')
+    const { info, ...otherProps } = movie;
+    console.log(otherProps);
+    const {title: movieTitle} = info;
+    text = movieTitle + ' - '
+    for (key in info) {
+      if (key !== 'title') {
+        text = text + `${key}: ${info[key]}`
+      }
+    }
+    movieEl.textContent = text;
+    movieList.append(movieEl)
+  })
 }
+const searchMoviesHandler = () => {
+  const filterTerm = document.getElementById('filter-title').value
+  rendermovies(filterTerm)
+}
+
+const addMovieHandler = () => {
+  const title = document.getElementById('title').value
+  const extraName = document.getElementById('extra-name').value
+  const extraValue = document.getElementById('extra-value').value
+
+  if (
+    title.trim() === '' ||
+    extraName.trim() === '' ||
+    extraValue.trim() === ''
+  ) {
+    alert('pelase enter valid values')
+    return
+  }
+  const newMovie = {
+    info: {
+      title,
+      [extraName]: extraValue,
+    },
+    id: Math.random().toString(), 
+  }
+  movies.push(newMovie)
+  rendermovies()
+  const newMovie2 = Object.assign({}, newMovie);
+  console.log(newMovie2);
+}
+addMovieBtn.addEventListener('click', addMovieHandler)
+searchBtn.addEventListener('click', searchMoviesHandler)
