@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 const addMovieBtn = document.getElementById('add-movie-btn')
 const searchBtn = document.getElementById('search-btn')
 
@@ -42,6 +42,7 @@ const rendermovies = (filter = '') => {
   })
 }
 const searchMoviesHandler = () => {
+  console.log(this);
   const filterTerm = document.getElementById('filter-title').value
   rendermovies(filterTerm)
 }
