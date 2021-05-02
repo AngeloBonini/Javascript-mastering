@@ -16,8 +16,7 @@ class ShoppingCart {
   items = []
   addProduct(product) {
     this.items.push(product)
-    this.totalOutput = `  <h2>Total: \$${1}</h2>`;
-    this.render()
+    this.totalOutput.innerHTML = `<h2>Total: \$${1}</h2>`;
   }
 
   render() {
@@ -27,7 +26,7 @@ class ShoppingCart {
       <button>Order Now!!</button>
     `
     cartEl.className = 'cart'
-    this.totalOutput.querySelector('h2')
+    this.totalOutput = cartEl.querySelector('h2')
     return cartEl
   }
 }
@@ -38,8 +37,7 @@ class ProductItem {
   }
 
   addToCart() {
-    console.log('adding Product to cart')
-    console.log(this.product)
+   App.addProductToCart(this.product);
   }
 
   render() {
