@@ -5,40 +5,46 @@ class Product {
   // price;
 
   constructor(title, image, desc, price) {
-    this.title = title;
-    this.imageUrl = image;
-    this.description = desc;
-    this.price = price;
+    this.title = title
+    this.imageUrl = image
+    this.description = desc
+    this.price = price
   }
 }
 
-class ShoppingCart{
-  items = [];
+class ShoppingCart {
+  items = []
+  addProduct(product) {
+    this.items.push(product)
+    this.totalOutput = `  <h2>Total: \$${1}</h2>`;
+    this.render()
+  }
 
-  render(){
-    const cartEl = document.createElement('section');
+  render() {
+    const cartEl = document.createElement('section')
     cartEl.innerHTML = `
       <h2>Total: \$${0}</h2>
       <button>Order Now!!</button>
     `
-    cartEl.className = 'cart';
-    return cartEl;
+    cartEl.className = 'cart'
+    this.totalOutput.querySelector('h2')
+    return cartEl
   }
 }
 
 class ProductItem {
   constructor(product) {
-    this.product = product;
+    this.product = product
   }
 
-  addToCart(){
-    console.log("adding Product to cart");
-    console.log(this.product);
+  addToCart() {
+    console.log('adding Product to cart')
+    console.log(this.product)
   }
 
   render() {
-    const prodEl = document.createElement('li');
-    prodEl.className = 'product-item';
+    const prodEl = document.createElement('li')
+    prodEl.className = 'product-item'
     prodEl.innerHTML = `
         <div>
           <img src="${this.product.imageUrl}" alt="${this.product.title}" >
@@ -49,11 +55,10 @@ class ProductItem {
             <button>Add to Cart</button>
           </div>
         </div>
-      `;
-      const addCartButton = prodEl.querySelector('button');
-      addCartButton.addEventListener('click', this.addToCart.bind(this) )
-    return prodEl;
-
+      `
+    const addCartButton = prodEl.querySelector('button')
+    addCartButton.addEventListener('click', this.addToCart.bind(this))
+    return prodEl
   }
 }
 
@@ -63,45 +68,53 @@ class ProductList {
       'A Pillow',
       'https://www.maxpixel.net/static/photo/2x/Soft-Pillow-Green-Decoration-Deco-Snuggle-1241878.jpg',
       'A soft pillow!',
-      19.99
+      19.99,
     ),
     new Product(
       'A Carpet',
       'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ardabil_Carpet.jpg/397px-Ardabil_Carpet.jpg',
       'A carpet which you might like - or not.',
-      89.99
-    )
-  ];
+      89.99,
+    ),
+  ]
 
   constructor() {}
 
   render() {
-    const prodList = document.createElement('ul');
-    prodList.className = 'product-list';
+    const prodList = document.createElement('ul')
+    prodList.className = 'product-list'
     for (const prod of this.products) {
-      const productItem = new ProductItem(prod);
-      const prodEl = productItem.render();
-      prodList.append(prodEl);
+      const productItem = new ProductItem(prod)
+      const prodEl = productItem.render()
+      prodList.append(prodEl)
     }
-    return prodList;
+    return prodList
   }
 }
-class ShopPage{
-  render(){
-    const renderHook = document.getElementById('app');
+class ShopPage {
+  render() {
+    const renderHook = document.getElementById('app')
 
-    const cart = new ShoppingCart();
-    const cartEl = cart.render();
-    const productList = new ProductList();
-    const  prodListEl = productList.render();
+    this.cart = new ShoppingCart()
+    const cartEl = this.cart.render()
+    const productList = new ProductList()
+    const prodListEl = productList.render()
 
-    renderHook.append(cartEl);
-    renderHook.append(prodListEl);
-    
+    renderHook.append(cartEl)
+    renderHook.append(prodListEl)
   }
 }
 
-const shop = new ShopPage();
+class App {
+  static init() {
+    const shop = new ShopPage()
+    this.cart = shop.cart;
+    shop.render()
+  }
 
-shop.render();
+  static addProductToCart(product) {
+    this.cart.addProduct(product)
+  }
+}
 
+App.init()
