@@ -106,11 +106,11 @@ class ShopPage {
 class App {
 
   static cart;
-  
+
   static init() {
     const shop = new ShopPage()
+    shop.render();
     this.cart = shop.cart;
-    shop.render()
   }
 
   static addProductToCart(product) {
