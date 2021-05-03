@@ -12,6 +12,34 @@ class Product {
   }
 }
 
+
+class ElementAttribute{
+  cosntructor(attrNmae, attrValue){
+    this.name = attrNmae;
+    this.value = attrValue;
+
+  }
+}
+class Component{
+
+  constructor(renderHookId){
+    this.hookId = renderHookId;
+  }
+  createRootElement(tag, cssClasses, attributes){
+    const rootElem = document.createElement(tag);
+    if(cssClasses){
+      rootElem.className = cssClasses;
+    }
+    if(attributes && attributes.length > 0){
+      for (const attr of attributes){
+        rootElem.setAttribute(attr.name, attr.value);
+      }
+    }
+    document.getElementById(this.hookId).append(rootElem);
+    return this.rootElem;
+  }
+}
+
 class ShoppingCart {
   items = []
 set cartValues(value){
