@@ -14,9 +14,20 @@ class Product {
 
 class ShoppingCart {
   items = []
+set cartValues(value){
+this.items = value;
+this.totalOutput.innerHTML = `<h2>Total: \$${this.totalAmount.toFixed(2)}</h2>`
+}
+
+  get totalAmount() {
+    const sum = this.items.reduce(
+      (prevValue, CurItem) => prevValue + CurItem.price, 0)
+  return sum;
+    }
   addProduct(product) {
-    this.items.push(product)
-    this.totalOutput.innerHTML = `<h2>Total: \$${1}</h2>`;
+    const updateditems = [...this.items];
+    updateditems.push(product);
+    this.cartValues = updateditems;
   }
 
   render() {
@@ -37,7 +48,7 @@ class ProductItem {
   }
 
   addToCart() {
-   App.addProductToCart(this.product);
+    App.addProductToCart(this.product)
   }
 
   render() {
@@ -104,13 +115,12 @@ class ShopPage {
 }
 
 class App {
-
-  static cart;
+  static cart
 
   static init() {
     const shop = new ShopPage()
-    shop.render();
-    this.cart = shop.cart;
+    shop.render()
+    this.cart = shop.cart
   }
 
   static addProductToCart(product) {
