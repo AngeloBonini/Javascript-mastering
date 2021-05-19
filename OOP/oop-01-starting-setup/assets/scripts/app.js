@@ -11,7 +11,7 @@ class Product {
     this.price = price
   }
 }
-
+// aula 15- implementing inheritance, 4min17seg; --->
 
 class ElementAttribute{
   cosntructor(attrNmae, attrValue){
