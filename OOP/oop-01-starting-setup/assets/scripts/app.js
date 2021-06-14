@@ -20,12 +20,11 @@ class ElementAttribute {
 }
 
 class Component {
-  constructor(renderHookId, shouldredner = true) {
+  constructor(renderHookId, shouldRender = true) {
     this.hookId = renderHookId;
-    if(shouldredner){
+    if (shouldRender) {
       this.render();
     }
-
   }
 
   render() {}
@@ -64,7 +63,12 @@ class ShoppingCart extends Component {
   }
 
   constructor(renderHookId) {
-    super(renderHookId);
+    super(renderHookId, false);
+    this.orderProducts = () => {
+      console.log('Ordering...');
+      console.log(this.items);
+    };
+    this.render();
   }
 
   addProduct(product) {
@@ -79,6 +83,9 @@ class ShoppingCart extends Component {
       <h2>Total: \$${0}</h2>
       <button>Order Now!</button>
     `;
+    const orderButton = cartEl.querySelector('button');
+    // orderButton.addEventListener('click', () => this.orderProducts());
+    orderButton.addEventListener('click', this.orderProducts);
     this.totalOutput = cartEl.querySelector('h2');
   }
 }
@@ -120,7 +127,7 @@ class ProductList extends Component {
     this.fetchProducts();
   }
 
-  fetchProducts(){   
+  fetchProducts() {
     this.products = [
       new Product(
         'A Pillow',
@@ -138,31 +145,30 @@ class ProductList extends Component {
     this.renderProducts();
   }
 
-  renderProducts(){
+  renderProducts() {
     for (const prod of this.products) {
       new ProductItem(prod, 'prod-list');
-   }
+    }
   }
 
   render() {
     this.createRootElement('ul', 'product-list', [
       new ElementAttribute('id', 'prod-list')
     ]);
-    if(this.products && this.products.length > 0){
+    if (this.products && this.products.length > 0) {
       this.renderProducts();
     }
   }
 }
 
 class Shop {
-
-  cosntructor(){
+  constructor() {
     this.render();
   }
 
   render() {
     this.cart = new ShoppingCart('app');
-     new ProductList('app');
+    new ProductList('app');
   }
 }
 
