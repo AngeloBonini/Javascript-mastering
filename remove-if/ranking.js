@@ -57,3 +57,21 @@ actionSwitch('prime');
 actionSwitch('prime');
 actionSwitch('prime');
 actionSwitch('prime');
+/**
+ * now this part is a more direct strategie
+ * using a key-value pair, just like inside an object
+ *
+ */
+let keys = {
+    'prime': watchTV,
+    'second': travel,
+    'third': shopping,
+    'fourth': review
+};
+function actionKey(ranking) {
+    let strategy = keys[ranking];
+    strategy();
+}
+actionKey('prime');
+actionKey('third');
+actionKey('second');
