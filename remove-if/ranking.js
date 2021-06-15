@@ -14,6 +14,10 @@ function review() {
     console.log("the code review is my deepest fear");
     return "the end";
 }
+function reviewAllDay() {
+    console.log("the code review is my deepest fear");
+    return "the end";
+}
 /**
  * This is the common if/else statement tree, wich can be much expensive in terms of computability
  * @param {ranking is a string} ranking
@@ -62,16 +66,31 @@ actionSwitch('prime');
  * using a key-value pair, just like inside an object
  *
  */
-let keys = {
+var keys = {
     'prime': watchTV,
     'second': travel,
     'third': shopping,
     'fourth': review
 };
 function actionKey(ranking) {
-    let strategy = keys[ranking];
+    var strategy = keys[ranking];
     strategy();
 }
 actionKey('prime');
 actionKey('third');
 actionKey('second');
+var strategies = new Map([
+    ['major_A', travel],
+    ['major_B', review],
+    ['major_C', reviewAllDay],
+    ['major_D', reviewAllDay],
+    ['minor_A', travel],
+    ['minor_B', shopping],
+    ['minor_C', watchTV],
+    ['minor_D', review]
+]);
+function actionMap(ranking, subjectType) {
+    var condition = subjectType + "_" + ranking;
+    var strategy = strategies.get(condition);
+    strategy();
+}

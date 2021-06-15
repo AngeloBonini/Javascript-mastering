@@ -17,6 +17,11 @@ function review():string {
   console.log("the code review is my deepest fear");
   return "the end";
 }
+
+function reviewAllDay():string {
+  console.log("the code review is my deepest fear");
+  return "the end";
+}
 /**
  * This is the common if/else statement tree, wich can be much expensive in terms of computability
  * @param {ranking is a string} ranking 
@@ -86,4 +91,21 @@ actionSwitch('prime')
    actionKey('third')
    actionKey('second')
   
+   let strategies = new Map([
+    ['major_A', travel],
+    ['major_B', review],
+    ['major_C', reviewAllDay],
+    ['major_D', reviewAllDay],
+    ['minor_A', travel],
+    ['minor_B', shopping],
+    ['minor_C', watchTV],
+    ['minor_D', review]
+  ])
   
+  function actionMap(ranking, subjectType){
+    let condition = `${subjectType}_${ranking}`
+  
+    let strategy = strategies.get(condition)
+    
+    strategy()
+  }
