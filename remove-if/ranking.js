@@ -1,14 +1,18 @@
 function watchTV() {
     console.log("Now I can watch a tv program");
+    return "the end";
 }
 function travel() {
     console.log("letś go to China");
+    return "the end";
 }
 function shopping() {
     console.log("I'm gonna shop now");
+    return "the end";
 }
 function review() {
-    console.log("the code review is mydeepest fear");
+    console.log("the code review is my deepest fear");
+    return "the end";
 }
 /**
  * This is the common if/else statement tree, wich can be much expensive in terms of computability
@@ -28,4 +32,28 @@ function action(ranking) {
         review();
     }
 }
-action("prime");
+/**
+ * Now we will add an Switch case statement
+ * now the nodes are independent for each other, as we can see,
+ * but we can still make it better.
+ */
+function actionSwitch(ranking) {
+    switch (ranking) {
+        case 'prime':
+            travel();
+            break;
+        case 'second':
+            shopping();
+            break;
+        case 'third':
+            watchTV();
+            break;
+        case 'fourth':
+            review();
+            break;
+    }
+}
+actionSwitch('prime');
+actionSwitch('prime');
+actionSwitch('prime');
+actionSwitch('prime');
