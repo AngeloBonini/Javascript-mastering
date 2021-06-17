@@ -1,20 +1,25 @@
 class Singleton{
-  static instance : Singleton = undefined;
-  instanceID: number;
-  getInstance: () => Singleton;
+  private static instance : Singleton ;
+  // instanceID: number;
+  // getInstance: () => Singleton;
 
-  init(value: number) {
-    this.instanceID = value;
-    this.getInstance = () => Singleton.instance;
-    return this
-  }
+  // init(value: number) {
+  //   this.instanceID = value;
+  //   this.getInstance = () => Singleton.instance;
+  //   return this
+  // }
 
-  constructor(value: number) {
-    if (Singleton.instance === undefined) {
+  constructor() {
+    if (Singleton.instance) {
 
-      Singleton.instance = this.init(value);
+   return   Singleton.instance ;
     }
-    return Singleton.instance;
+  
+    this.member = 0;
+    Singleton.instance = this
   }
-
+  member: number;
 }
+
+let test = new Singleton();
+console.log(test);
