@@ -17,5 +17,16 @@ function Person(){
     
 }
 
+Person.prototype = {
+    printAge(){
+        console.log("print a age is a good pratice")
+    }
+};
+
+console.dir(Person)
+
 const me = new Person();
 me.greet();
+
+console.log(me.toString());
+console.log(me.__proto__ === Person.prototype);
