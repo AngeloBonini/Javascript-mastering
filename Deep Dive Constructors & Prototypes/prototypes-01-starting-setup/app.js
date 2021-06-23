@@ -31,7 +31,8 @@ function Person(){
 // };
 
 Person.prototype.printAge = () => ( console.log(this.age));
-
+console.log(Object);
+console.dir(Object.prototype);
 console.dir(Person)
 
 const me = new Person();
