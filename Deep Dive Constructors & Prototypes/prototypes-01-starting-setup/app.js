@@ -23,12 +23,16 @@ function Person(){
     this.greet = ()=> (console.log('greet, I am  ' + this.name, "I'm " + this.age))
     
 }
+Person.prototype.greet = function(){
+    console.log("Hello, my friend" + this.name + " is my name and , I am " + this.age + "years old.");
+}
 
 // Person.prototype = {
 //     printAge(){
 //         console.log("print a age is a good pratice")
 //     }
 // };
+
 
 Person.prototype.printAge = () => ( console.log(this.age));
 console.log(Object);
