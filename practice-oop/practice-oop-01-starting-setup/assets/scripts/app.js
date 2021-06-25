@@ -2,13 +2,39 @@ class Tooltip{
 
 }
 
-class ProjectItem {}
+class ProjectItem {
+    cosntructor(id){
+        this.id =id;
+        this.connectSwitchBtn();
+        this.connectInfoBtn();
+    }
+    connectSwitchBtn(){
+        const prjItemEl = document.getElementById(this.id);
+        const switchButton = prjItemEl.querySelector('button:last-of-type');
+        switchButton.addEventListener('click',);
+    }
+    connectInfoBtn(){
+
+    }
+}
 
 class ProjectList {
-
+    projects= [];
     constructor(type){
         const projectsItems = document.querySelectorAll(`#${type}-projects li`);
-        console.log(projectsItems);
+        for(const item of projectsItems){
+            this.projects.push(new ProjectItem(item.id))
+        }
+        console.log(this.projects)
+    }
+    switchProject(projectId){
+        this.projects = this.projects.filter(p => p.id !== projectId);
+        // const projIndex = this.projects.findIndex(p => p.id === projectId)
+        // this.projects.splice(projIndex, 1);
+    }
+
+    addProject(){
+
     }
 }
 
