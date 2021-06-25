@@ -4,7 +4,7 @@
 **Here you will find diferent studies about javascript and some famous libraries, and typescript :heart:.** 
 ###### The folder structure is tyhe following:
 
-![alt text](/mnt/AngeloHD/typescript/javascript-algorithms/assets/folders.png "folders general")
+![alt text](assets/folders.png?raw=true "Folders")
 
 - [x] Javascript: Contains the lessions and projects developed into the Javascript Masterclass
 - [x] Typscript: Contains some design patterns and typescript features example for studies
