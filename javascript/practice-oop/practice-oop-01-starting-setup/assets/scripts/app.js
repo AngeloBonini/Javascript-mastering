@@ -1,4 +1,10 @@
 class DOMHelper {
+    static clearEventListeners(element){
+        const clonedElement = element.cloneNode(true);
+        element.replaceWith(clonedElement);
+        return clonedElement;
+    }
+
     static moveElement(elmId, newDestinationSelector){
 const element = document.getElementById(elmId);
 const destination = document.querySelector(newDestinationSelector);
@@ -20,10 +26,15 @@ class ProjectItem {
     connectSwitchBtn(){
         const prjItemEl = document.getElementById(this.id);
         const switchButton = prjItemEl.querySelector('button:last-of-type');
+        switchButton = DOMHelper.clearEventListeners(switchButton);
         switchButton.addEventListener('click', this.updateProjectListHandler.bind(null, this.id));
     }
     connectInfoBtn(){
 
+    }
+    update(updateProjectsListfn, type){
+        this.updateProjectListHandler = updateProjectsListfn;
+        this.connectSwitchBtn();
     }
 }
 
@@ -41,6 +52,7 @@ class ProjectList {
     addProject(project){
         this.projects.push(project);
         DOMHelper.moveElement(project.id ,`#${this.type}-projects ul`);
+        project.update(this.switchProject.bind(this), this.type);
     }
      
     switchProject(projectId){
