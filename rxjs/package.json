@@ -1,0 +1,16 @@
+{
+  "name": "rxjs-lession1",
+  "version": "1.0.0",
+  "description": "typescript rxjs first lession",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "rxjs": "^6.6.7"
+  },
+  "author": "AngeloBonini",
+  "license": "ISC"
+}
