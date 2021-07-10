@@ -4,6 +4,8 @@ let pivotIndex= start;
 console.log(pivotValue);
 for(let i = start; i < end; i++){
     if(arr[i]<pivotValue){
+
+        
         console.log(arr[i]);
         console.log(arr[pivotIndex]);
         [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
