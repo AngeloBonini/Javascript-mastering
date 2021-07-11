@@ -1,6 +1,6 @@
 # Javascript-basics
 
-## Hello, friend, welcome to my my repository :smile:.
+## Hello, friend, welcome to my javascript learning repository :smile:.
 **Here you will find diferent studies about javascript and some famous libraries, and typescript :heart:.** 
 ###### The folder structure is tyhe following:
 
@@ -9,6 +9,7 @@
 - [x] Javascript: Contains the lessions and projects developed into the Javascript Masterclass
 - [x] Typscript: Contains some design patterns and typescript features example for studies
 - [x] algorithms: contains some exercises applying general concepts of the programming fundamentals
+- [x] RXJS: applying general use cases of reactive library, rxjs, exploring Observables. 
 
 
 ## If you want to contribute:
