@@ -7,11 +7,19 @@ const observer = {
 };
 
 const observable = new Observable((subscriber) => {
-  subscriber.next("HI friend");
-  subscriber.next("World");
+let count = 0;
+
+  const id = setInterval(()=>{
+  subscriber.next(count);
   subscriber.complete();
+  count+=1;
+}, 1000);
+return ()=>{
+  console.log('calling..');
+  clearInterval(id); 
+}
 });
 
-observable.subscribe(
-  (value) => console.log("next", value),
-);
+console.log('before');
+observable.subscribe(observer);
+console.log('after');
