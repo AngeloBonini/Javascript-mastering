@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "esm": "^3.2.25",
+    "node-emoji": "^1.10.0",
     "rxjs": "^6.6.7"
   },
   "author": "AngeloBonini",
