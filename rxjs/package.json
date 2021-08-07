@@ -10,6 +10,8 @@
   "dependencies": {
     "esm": "^3.2.25",
     "node-emoji": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "node-require": "^0.0.10",
     "rxjs": "^6.6.7"
   },
   "author": "AngeloBonini",
