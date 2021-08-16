@@ -12,3 +12,10 @@ const keyCodeWithPluck$ = keyup$.pipe(
 );
 
 keyCodeWithPluck$.subscribe(console.log);
+
+
+const keyPressed$ = keyup$.pipe(
+    mapTo('Key Pressed!')
+);
+
+keyPressed$.subscribe(console.log);
