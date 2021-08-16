@@ -1,21 +1,7 @@
-import { fromEvent } from ' rxjs';
-import { map, pluck } from 'rxjs/operators';
-
-const keyup$ = fromEvent(documetn, 'keyup');
-const keycode$ = keyup$.pipe(
-map(event => event.code)
-);
-keyup$.subscribe(console.log)
-
-const keyCodeWithPluck$ = keyup$.pipe(
-    pluck('target', "nodeName")
-);
-
-keyCodeWithPluck$.subscribe(console.log);
+import { of, fromEvent } from ' rxjs';
+import { filter } from 'rxjs/operators';
 
 
-const keyPressed$ = keyup$.pipe(
-    mapTo('Key Pressed!')
-);
-
-keyPressed$.subscribe(console.log);
+of(1,2,3,4,4,33,43,4).pipe(
+    filter(value => value > 2)
+).subscribe(console.log);
