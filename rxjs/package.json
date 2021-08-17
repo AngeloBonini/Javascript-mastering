@@ -4,8 +4,9 @@
   "description": "typescript rxjs first lession",
   "main": "index.ts",
   "type": "module",
+
   "scripts": {
-    "test": "npm run test"
+    "start": "webpack-dev-server --mode development"
   },
   "dependencies": {
     "esm": "^3.2.25",
