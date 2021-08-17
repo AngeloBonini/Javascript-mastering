@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "typescript rxjs first lession",
   "main": "index.ts",
-  "type": "module",
+
   "scripts": {
-    "start": "webpack-dev-server --mode development"
+    "start":  "webpack serve",
+    "dev": "webpack serve --mode development --env development"
   },
   "dependencies": {
     "esm": "^3.2.25",
