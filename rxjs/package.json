@@ -19,5 +19,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "author": "AngeloBonini",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-cli": "^4.8.0"
+  }
 }
