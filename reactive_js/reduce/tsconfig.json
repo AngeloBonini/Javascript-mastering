@@ -1,0 +1,17 @@
+{
+  "exclude": ["node_modules", "dist", "configs"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "charset": "utf8",
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "target": "ES6",
+    "sourceMap": true,
+    "watch": true,
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "checkJs": true,
+    "allowJs":true,
+    "experimentalDecorators": true
+  }
+}
