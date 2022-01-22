@@ -1,6 +1,6 @@
 # Javascript-basics
 
-## Hello, friend, welcome to my javascript learning repository :smile:.
+## Hello friend, welcome to my javascript learning repository :smile:.
 **Here you will find diferent studies about javascript and some famous libraries, and typescript :heart:.** 
 ###### The folder structure is tyhe following:
 
