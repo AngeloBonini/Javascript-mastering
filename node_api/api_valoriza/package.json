@@ -1,0 +1,12 @@
+{
+  "name": "api_valoriza",
+  "version": "1.0.0",
+  "description": "simple api to test core concepts",
+  "main": "index.js",
+  "author": "Gelo",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^4.5.5"
+  }
+}
