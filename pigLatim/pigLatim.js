@@ -1,5 +1,5 @@
 function englishTranslator(wordToTranslate) {
-  const splitWords = wordToTranslate.split(" ");
+  const splitWords = wordToTranslate.split(/\s*\b\s*/);
   let translatedWords = splitWords
     .map((word) => {
       for (let position = 0; position <= word.length; position++) {
@@ -8,15 +8,15 @@ function englishTranslator(wordToTranslate) {
           const stem = word.substring(position, word.length);
           const endingChar = "ay";
           let translatedWord = stem + prefix + endingChar;
-          // console.log('base word: '+ word + " start with capital: "+checkStartsWithCapital(word))
-          translatedWord = checkStartsWithCapital(word) ? capitalizeFirstLetter(translatedWord) : translatedWord;
-          //   translatedWord.toLowerCase().toLocaleUpperCase(position) : translatedWord = translatedWord
-          
+          translatedWord = checkStartsWithCapital(word)
+            ? capitalizeFirstLetter(translatedWord)
+            : translatedWord;
           return translatedWord;
         }
       }
     })
-    .join(" ").split(" ").join(" ")
+    .join(" ");
+
   console.log(translatedWords);
 }
 
@@ -28,12 +28,12 @@ function checkStartsWithCapital(word) {
   return word.charAt(0) === word.charAt(0).toUpperCase();
 }
 
-function capitalizeFirstLetter(word){
-const wordToLowerCase = word.toLowerCase();
-const upperLetter = wordToLowerCase.charAt(0).toUpperCase();
-const restOfWord = wordToLowerCase.slice(1)
-const upperCaseWord = upperLetter + restOfWord;
-return upperCaseWord;
+function capitalizeFirstLetter(word) {
+  const wordToLowerCase = word.toLowerCase();
+  const upperLetter = wordToLowerCase.charAt(0).toUpperCase();
+  const restOfWord = wordToLowerCase.slice(1);
+  const upperCaseWord = upperLetter + restOfWord;
+  return upperCaseWord;
 }
 
 // englishTranslator("Stop");
